@@ -14,13 +14,15 @@ mongoose.connect(url,function(err){
 
 router.get('/jobs',function(req,res){
     console.log('finding all jobsss for u');
+    try{
     Jobs.find({}).exec(function(err,jobs){
-        if(err){
-            console.log("Error fetching while jobs")
-        }else{
-            res.json(jobs)
-        }
-    })
+        // if(err){
+        //     console.log("Error fetching while jobs")
+        // }else{
+        //     res.json(jobs)
+        // }
+    })}
+    catch(err){console.log(err)}
 });
 
 
