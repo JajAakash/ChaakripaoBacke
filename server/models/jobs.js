@@ -17,7 +17,10 @@ const jobSchema=new Schema({
     created:Date,
     source:String,
     maxExp:Number,
-    minExp:Number
+    minExp:Number,
+    noofDays:Number,
+    noofWeeks:Number,
+    noofMonths:Number
 })
 
 module.exports=mongoose.model('jobs',jobSchema,'BYJUSJOBS')
