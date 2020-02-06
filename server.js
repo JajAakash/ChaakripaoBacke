@@ -29,7 +29,9 @@ app.get('*',(req,res)=>{
 
 });
 
-app.listen(port,function(){
-    console.log("server running on port:" + port)
+// app.listen(port,function(){
+//     console.log("server running on port:" + port)
 
-});
+// });
+
+app.listen(process.env.PORT || 5000)
