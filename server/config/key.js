@@ -7,7 +7,17 @@ module.exports={
         clientSecret: '7kcZFaxrrEhFOhd28yT9b38g',
         //clientSecret:'xqJXjiPX_iKGZf6MgESYsb86'
         //callbackURL: hostname + '/auth/google/callback'
+
+        //265370481252-27c9mrnac121u15d9qskrg84ds6r3e0n.apps.googleusercontent.com
+        //TaYGuksGNDwhcVBOoq9hV_3r
     },
+
+    linkedin: {
+        clientID: '81uzyj2zrneoe6',
+        clientSecret: 'rgehJLbVzeABtW6a',
+        
+    },
+    
 
     mongodb: {
         dbURI: 'mongodb://admin:admin123@ds257551.mlab.com:57551/byjusjobs'

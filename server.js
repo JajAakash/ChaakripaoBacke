@@ -8,7 +8,7 @@ const cookieSession=require('cookie-session')
 
 const api=require('./server/routes/api');
 
-const port =process.env.PORT || 5000;
+const port =process.env.PORT || 7000;
 
 const app=express();
 

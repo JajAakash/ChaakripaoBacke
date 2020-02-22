@@ -3,28 +3,28 @@ var User=require('../models/user')
 const express =require ('express');
 const router =express.Router();
 const jwt=require('jsonwebtoken')
-  
 
-// router.get('/google',passport.authenticate('google',{
-    
-//     scope:[
-        
-//         'https://www.googleapis.com/auth/plus.login',
-//         'https://www.googleapis.com/auth/userinfo.email'
-//         //'profile'
-//     ]
-// }));
+var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
-// router.get('/google/callback',passport.authenticate('google'),(req,res)=>{
-//     res.redirect(('/profile'));
-// });
+// --------------------LINKEDIN-----------------
+router.get('/linkedin',
+passport.authenticate('linkedin', { state: 'SOME STATE'  }),
+function(req, res){
+
+});
 
 
-// router.get("/logout", function(req, res , next) {
-//     var refURL = 'http://localhost:4200/sign-in';
-//     req.logout();
-//     res.redirect(refURL);
-// });
+router.get('/linkedin/callback', passport.authenticate('linkedin'),(req,res)=> {
+    // successRedirect: 'http://localhost:4200/',
+    // failureRedirect: '/login'
+    let payload={subject: req.body.id}
+    console.log(payload,req.body.id)
+    let token=jwt.sign(payload, 'secretkey')
+    console.log(token)
+    res.send(token);
+});
+
+
 
 router.post('/login',function(req,res){
     User.findOne({googleid:req.body.id}).then((currentUser)=>{
