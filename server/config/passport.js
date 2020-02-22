@@ -47,8 +47,8 @@ passport.use(new GoogleStrategy({
 
 
 passport.use(new LinkedInStrategy({
-  //callbackURL: 'auth/linkedin/callback',
-  callbackURL='https://naukrichakri.herokuapp.com/auth/linkedin/callback',
+  callbackURL: 'auth/linkedin/callback',
+  //callbackURL='https://naukrichakri.herokuapp.com/auth/linkedin/callback',
     clientID: key.linkedin.clientID,
     clientSecret: key.linkedin.clientSecret,
     scope: ['r_emailaddress', 'r_liteprofile'],
